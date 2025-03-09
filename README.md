@@ -1,66 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Kritik & Saran SMK Telkom Lampung
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="public/assets/img/logo.png" width="200" alt="SMK Telkom Lampung Logo">
 </p>
 
-## About Laravel
+## Tentang Aplikasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi Kritik & Saran adalah platform digital yang dikembangkan untuk SMK Telkom Lampung, dirancang untuk memfasilitasi komunikasi yang efektif antara siswa, orang tua, dan pihak sekolah. Aplikasi ini memungkinkan pengguna untuk menyampaikan kritik, saran, dan masukan secara terstruktur kepada unit-unit yang ada di sekolah.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Pengiriman Kritik & Saran**: Kemudahan dalam menyampaikan kritik dan saran kepada unit tujuan yang spesifik
+- **Unit Tujuan Terstruktur**: Pengelompokan feedback berdasarkan unit-unit sekolah
+- **Manajemen Pengguna**: Sistem autentikasi dan otorisasi untuk siswa, orang tua, dan admin
+- **Dashboard Admin**: Panel kontrol untuk mengelola dan menanggapi feedback yang masuk
+- **Notifikasi**: Pemberitahuan status dan tindak lanjut dari feedback yang disampaikan
 
-## Learning Laravel
+## Teknologi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aplikasi ini dibangun menggunakan teknologi modern:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Framework**: Laravel 10.x
+- **Database**: MySQL
+- **Frontend**: Blade Template, TailwindCSS
+- **Authentication**: Laravel Breeze
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalasi
 
-## Laravel Sponsors
+1. Clone repositori ini:
+```bash
+git clone [repository-url]
+cd app-kritik
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Install dependensi PHP:
+```bash
+composer install
+```
 
-### Premium Partners
+3. Install dependensi Node.js:
+```bash
+npm install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. Salin file .env.example menjadi .env dan sesuaikan konfigurasi:
+```bash
+cp .env.example .env
+```
 
-## Contributing
+5. Generate application key:
+```bash
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Jalankan migrasi database:
+```bash
+php artisan migrate --seed
+```
 
-## Code of Conduct
+7. Compile assets:
+```bash
+npm run dev
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. Jalankan aplikasi:
+```bash
+php artisan serve
+```
 
-## Security Vulnerabilities
+## Penggunaan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Akses aplikasi melalui browser di `http://localhost:8000`
+2. Login menggunakan kredensial yang sesuai (siswa/orang tua/admin)
+3. Pilih unit tujuan untuk menyampaikan kritik atau saran
+4. Isi formulir dengan detail feedback yang ingin disampaikan
+5. Submit dan tunggu respon dari unit terkait
 
-## License
+## Struktur Database
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Aplikasi menggunakan beberapa tabel utama:
+
+- `users`: Menyimpan data pengguna
+- `unit_tujuan`: Daftar unit-unit sekolah
+- `kritik_sarans`: Menyimpan data kritik dan saran
+
+## Kontribusi
+
+Untuk berkontribusi pada pengembangan aplikasi:
+
+1. Fork repositori
+2. Buat branch fitur (`git checkout -b fitur-baru`)
+3. Commit perubahan (`git commit -m 'Menambah fitur baru'`)
+4. Push ke branch (`git push origin fitur-baru`)
+5. Buat Pull Request
+
+## Lisensi
+
+Hak Cipta © 2024 SMK Telkom Lampung. Hak cipta dilindungi undang-undang.
+
+## Kontak
+
+Untuk informasi lebih lanjut, hubungi:
+- Email: info@smktelkomlampung.sch.id
+- Website: https://smktelkomlampung.sch.id

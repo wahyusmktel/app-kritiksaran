@@ -339,6 +339,4 @@
 
 </script>
 
-
-
 @endsection
