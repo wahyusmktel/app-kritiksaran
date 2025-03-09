@@ -331,8 +331,6 @@
           }).then(() => {
               // Kembalikan tombol ke keadaan semula
               $('#submitButton').prop('disabled', false).html('Kirim Aspirasi');
-              // Refresh halaman setelah pesan sukses
-              window.location.reload();
           });
       }, 300); // Delay 300ms untuk memastikan modal tertutup dulu
   }
